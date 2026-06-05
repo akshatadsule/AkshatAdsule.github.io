@@ -6,6 +6,12 @@ import { Github } from "./icons/github";
 import { LinkedIn } from "./icons/linkedin";
 import { Unsplash } from "./icons/unsplash";
 
+const navItems = [
+	{ id: "about", label: "About" },
+	{ id: "experience", label: "Experience" },
+	{ id: "projects", label: "Projects" },
+];
+
 export function Header() {
 	const [activeSection, setActiveSection] = useState("about");
 
@@ -52,42 +58,31 @@ export function Header() {
 				</ul>
 				<nav className="nav hidden lg:block">
 					<ul className="mt-16 w-max">
-						<a className="group flex items-center py-3" href="#about">
-							<span
-								className={`nav-indicator mr-4 h-px bg-slate-600 transition-all motion-reduce:transition-none ${
-									activeSection === "about"
-										? "w-16 bg-slate-200"
-										: "w-8 group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200"
-								}`}
-							></span>
-							<span
-								className={`nav-text text-xs font-bold uppercase tracking-widest ${
-									activeSection === "about"
-										? "text-slate-200"
-										: "text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200"
-								}`}
-							>
-								About
-							</span>
-						</a>
-						<a className="group flex items-center py-3" href="#experience">
-							<span
-								className={`nav-indicator mr-4 h-px bg-slate-600 transition-all motion-reduce:transition-none ${
-									activeSection === "experience"
-										? "w-16 bg-slate-200"
-										: "w-8 group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200"
-								}`}
-							></span>
-							<span
-								className={`nav-text text-xs font-bold uppercase tracking-widest ${
-									activeSection === "experience"
-										? "text-slate-200"
-										: "text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200"
-								}`}
-							>
-								experience
-							</span>
-						</a>
+						{navItems.map((item) => (
+							<li key={item.id}>
+								<a
+									className="group flex items-center py-3"
+									href={`#${item.id}`}
+								>
+									<span
+										className={`nav-indicator mr-4 h-px bg-slate-600 transition-all motion-reduce:transition-none ${
+											activeSection === item.id
+												? "w-16 bg-slate-200"
+												: "w-8 group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200"
+										}`}
+									></span>
+									<span
+										className={`nav-text text-xs font-bold uppercase tracking-widest ${
+											activeSection === item.id
+												? "text-slate-200"
+												: "text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200"
+										}`}
+									>
+										{item.label}
+									</span>
+								</a>
+							</li>
+						))}
 					</ul>
 				</nav>
 			</div>
