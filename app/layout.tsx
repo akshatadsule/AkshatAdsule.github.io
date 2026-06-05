@@ -25,19 +25,21 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
 	title: "Akshat Adsule",
 	description:
-		"Motivated student and teacher with strong interests in technology. Student at UC Davis.",
+		"Software Enginner and amatuer photographer",
 	keywords: [
 		"Akshat Adsule",
 		"UC Davis",
 		"Software Engineer",
+		"Software Engineering",
 		"Developer",
-		"Student",
+		"Photographer",
+		"Photographery",
 	],
 	authors: [{ name: "Akshat Adsule" }],
 	openGraph: {
 		title: "Akshat Adsule",
 		description:
-			"Motivated student and teacher with strong interests in technology. Student at UC Davis.",
+			"Software Enginner and amatuer photographer",
 		type: "website",
 	},
 };

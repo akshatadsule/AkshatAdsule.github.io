@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { Aperture } from "./icons/aperture";
 import { Github } from "./icons/github";
 import { LinkedIn } from "./icons/linkedin";
-import { Unsplash } from "./icons/unsplash";
 
 const navItems = [
 	{ id: "about", label: "About" },
@@ -90,22 +89,18 @@ export function Header() {
 		<header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
 			<div>
 				<h1>Akshat Adsule</h1>
-				<h2>Student at UC Davis</h2>
+				<h2>Software engineer & amateur photographer</h2>
 				<p>
-					Motivated student (and teacher at times) with strong interests in
-					technology
+					Incoming associate software engineer at Veeva
 				</p>
 				<ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
-					<li className="mr-5 text-xs shrink-0">
+					<li className="mr-5 shrink-0">
 						<Github />
 					</li>
-					<li className="mr-5 text-xs shrink-0">
+					<li className="mr-5 shrink-0">
 						<LinkedIn />
 					</li>
-					<li className="mr-5 text-xs shrink-0">
-						<Unsplash />
-					</li>
-					<li className="mr-5 text-xs shrink-0">
+					<li className="mr-5 shrink-0">
 						<Aperture />
 					</li>
 				</ul>
