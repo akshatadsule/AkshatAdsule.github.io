@@ -15,7 +15,7 @@ export function MainContent() {
 			companyLink: "https://www.veeva.com/",
 			startDate: "August 2026",
 			endDate: "?",
-			description: <>To be updated...</>,
+			description: ["To be updated..."],
 			techStack: [],
 		},
 		{
@@ -24,16 +24,11 @@ export function MainContent() {
 			companyLink: "https://www.veeva.com/",
 			startDate: "June 2025",
 			endDate: "Sept 2025",
-			description: (
-				<>
-					- Contributed to Veeva’s Electronic Data Capture (EDC) application, a
-					platform for collecting, reviewing, and validating clinical study data
-					<br />- Resolved 30+ software defects across the application,
-					improving system stability and reliability
-					<br />- Developed new features to support file uploads, integration of
-					externally sourced data, and ingestion of lab-collected data
-				</>
-			),
+			description: [
+				"Contributed to Veeva’s Electronic Data Capture (EDC) application, a platform for collecting, reviewing, and validating clinical study data",
+				"Resolved 30+ software defects across the application, improving system stability and reliability",
+				"Developed new features to support file uploads, integration of externally sourced data, and ingestion of lab-collected data",
+			],
 			techStack: [
 				"Java",
 				"React",
@@ -50,16 +45,11 @@ export function MainContent() {
 			companyLink: "https://iet.ucdavis.edu/",
 			startDate: "Oct 2023",
 			endDate: "Present",
-			description: (
-				<>
-					- Worked with students and senior developers to maintain MyInfoVault,
-					an all-encompassing platform for academic personnel
-					<br />- Developed new features in a complex and mature Java Spring web
-					application as per the needs of actual users
-					<br />- Collaborated on an ongoing UI refresh and transitioned
-					existing JSP pages to modern technologies such as React
-				</>
-			),
+			description: [
+				"Worked with students and senior developers to maintain MyInfoVault, an all-encompassing platform for academic personnel",
+				"Developed new features in a complex and mature Java Spring web application as per the needs of actual users",
+				"Collaborated on an ongoing UI refresh and transitioned existing JSP pages to modern technologies such as React",
+			],
 			techStack: ["Java", "Spring", "React", "MariaDB", "Jira"],
 		},
 
@@ -69,20 +59,11 @@ export function MainContent() {
 			companyLink: "https://home.americanwildhorse.org/",
 			startDate: "June 2023",
 			endDate: "Sept 2023",
-			description: (
-				<>
-					- Worked with a team of fellow interns to build & release a full-stack
-					mobile application to gather crowdsourced data for an ongoing project
-					to identify and tag horses in the wild with machine learning
-					<br />- Designed and deployed backend systems for image processing,
-					user management, and app functionality using standard technologies and
-					platforms such as node.js, postgres, Microsoft Azure, Google Firebase,
-					PostgresSQL, Docker, and Kubernetes.
-					<br />- Implemented machining learning models in to the backend to
-					ensure image validity and quality whilst removing unwanted and
-					dangerous content
-				</>
-			),
+			description: [
+				"Worked with a team of fellow interns to build & release a full-stack mobile application to gather crowdsourced data for an ongoing project to identify and tag horses in the wild with machine learning",
+				"Designed and deployed backend systems for image processing, user management, and app functionality using standard technologies and platforms such as node.js, postgres, Microsoft Azure, Google Firebase, PostgresSQL, Docker, and Kubernetes.",
+				"Implemented machining learning models in to the backend to ensure image validity and quality whilst removing unwanted and dangerous content",
+			],
 			techStack: [
 				"Node.js",
 				"Postgres",
@@ -102,15 +83,10 @@ export function MainContent() {
 			link: "https://github.com/skewer-project/skewer",
 			startDate: "Jan 2026",
 			endDate: "Present",
-			description: (
-				<>
-					- Building a distributed rendering system with a desktop scene
-					previewer, orchestration backend, and cloud render pipeline
-					<br />- Focused on production-grade workflows for scene authoring, job
-					coordination, and progressive render status across local and remote
-					environments
-				</>
-			),
+			description: [
+				"Building a distributed rendering system with a desktop scene previewer, orchestration backend, and cloud render pipeline",
+				"Focused on production-grade workflows for scene authoring, job coordination, and progressive render status across local and remote environments",
+			],
 			techStack: ["C++", "Go", "React", "TypeScript", "Three.js", "AWS"],
 		},
 	];

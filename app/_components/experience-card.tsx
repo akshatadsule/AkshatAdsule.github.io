@@ -9,7 +9,7 @@ interface TimelineCardDetails {
 	linkLabel: string;
 	startDate: string;
 	endDate: string;
-	description: React.ReactNode;
+	description: string[];
 	techStack: string[];
 }
 
@@ -19,7 +19,7 @@ export interface JobDetails {
 	companyLink: string;
 	startDate: string;
 	endDate: string;
-	description: React.ReactNode;
+	description: string[];
 	techStack: string[];
 }
 
@@ -28,7 +28,7 @@ export interface ProjectDetails {
 	link: string;
 	startDate: string;
 	endDate: string;
-	description: React.ReactNode;
+	description: string[];
 	techStack: string[];
 }
 
@@ -79,9 +79,11 @@ function TimelineCard({ item }: TimelineCardProps) {
 						)}
 					</h3>
 
-					<p className="mt-2 text-sm leading-normal text-left max-w-full">
-						{item.description}
-					</p>
+					<ul className="mt-2 list-disc space-y-1 pl-4 text-left text-sm leading-normal">
+						{item.description.map((description) => (
+							<li key={description}>{description}</li>
+						))}
+					</ul>
 
 					{/* Tech used */}
 					<ul className="mt-2 flex flex-wrap">
