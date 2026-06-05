@@ -15,7 +15,7 @@ export function MainContent() {
 			companyLink: "https://www.veeva.com/",
 			startDate: "August 2026",
 			endDate: "?",
-			description: ["To be updated..."],
+			description: [],
 			techStack: [],
 		},
 		{

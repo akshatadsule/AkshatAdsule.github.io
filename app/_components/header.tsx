@@ -89,8 +89,8 @@ export function Header() {
 		<header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
 			<div>
 				<h1>Akshat Adsule</h1>
-				<h2>Software engineer & amateur photographer</h2>
-				<p>Incoming associate software engineer at Veeva</p>
+				<h2>Software engineer & guy with a camera</h2>
+				<p>Associate software engineer at Veeva</p>
 				<ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
 					<li className="mr-5 shrink-0">
 						<Github />
