@@ -26,7 +26,7 @@ export function MainContent() {
 			endDate: "Sept 2025",
 			description: [
 				"Worked on Veeva’s Electronic Data Capture (EDC) application, a platform for collecting, reviewing, and validating clinical study data",
-				"Resolved 40+ software defects a Java backend and React/Backbone Frontend, improving system usability and reliability",
+				"Resolved 40+ software defects in a Java backend and React/Backbone frontend, improving system usability and reliability",
 				"Implemented production features for file uploads, external data ingestion, and lab-data workflows in Veeva EDC, improving support for clinical study data collection.",
 			],
 			techStack: [
@@ -62,7 +62,7 @@ export function MainContent() {
 			description: [
 				"Worked with a team to build and release a full-stack mobile application to gather crowdsourced data to identify and tag horses in the wild with machine learning",
 				"Designed and deployed backend systems for image processing, user management, and app functionality using standard technologies and platforms such as node.js, postgres, Microsoft Azure, Google Firebase, PostgresSQL, Docker, and Kubernetes.",
-				"Implemented machining learning models in to the backend to ensure image validity and quality whilst removing unwanted and dangerous content",
+				"Implemented machine learning models into the backend to ensure image validity and quality while removing unwanted and dangerous content",
 			],
 			techStack: [
 				"Node.js",
@@ -142,10 +142,11 @@ export function MainContent() {
 	return (
 		<main className="pt-24 lg:w-3/4 lg:py-24">
 			<section id="about">
-				Since I was a kid, I've always been fascinated by technology. I started
-				programming in middle school and have been hooked ever since. I'm
-				currently a student at UC Davis studying computer science and
-				enginnering. I've worked on a variety of projects with different
+				<h2 className="sr-only">About Akshat Adsule</h2>
+				I'm Akshat Adsule, a software engineer and UC Davis computer science and
+				engineering student. Since I was a kid, I've always been fascinated by
+				technology. I started programming in middle school and have been hooked
+				ever since. I've worked on a variety of projects with different
 				technologies and teams. In the past, I've built robots with my{" "}
 				<Link href="https://homesteadrobotics.com/" label="robotics team">
 					Robotics Team
@@ -178,6 +179,7 @@ export function MainContent() {
 			</section>
 
 			<section id="experience">
+				<h2 className="sr-only">Software engineering experience</h2>
 				<ol className="group/list">
 					{jobs.map((job) => (
 						<ExperienceCard key={`${job.company}-${job.role}`} job={job} />
@@ -188,6 +190,7 @@ export function MainContent() {
 			<hr className="mx-auto mb-20 mt-2 w-[calc(100%-2rem)] border-0 border-t border-slate-700/60 sm:w-[calc(100%-3rem)] lg:mb-16" />
 
 			<section id="projects">
+				<h2 className="sr-only">Software projects</h2>
 				<ol className="group/list">
 					{projects.map((project) => (
 						<ProjectCard key={project.name} project={project} />
