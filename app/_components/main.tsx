@@ -25,9 +25,9 @@ export function MainContent() {
 			startDate: "June 2025",
 			endDate: "Sept 2025",
 			description: [
-				"Contributed to Veeva’s Electronic Data Capture (EDC) application, a platform for collecting, reviewing, and validating clinical study data",
-				"Resolved 30+ software defects across the application, improving system stability and reliability",
-				"Developed new features to support file uploads, integration of externally sourced data, and ingestion of lab-collected data",
+				"Worked on Veeva’s Electronic Data Capture (EDC) application, a platform for collecting, reviewing, and validating clinical study data",
+				"Resolved 40+ software defects a Java backend and React/Backbone Frontend, improving system usability and reliability",
+				"Implemented production features for file uploads, external data ingestion, and lab-data workflows in Veeva EDC, improving support for clinical study data collection.",
 			],
 			techStack: [
 				"Java",
@@ -46,9 +46,9 @@ export function MainContent() {
 			startDate: "Oct 2023",
 			endDate: "Present",
 			description: [
-				"Worked with students and senior developers to maintain MyInfoVault, an all-encompassing platform for academic personnel",
-				"Developed new features in a complex and mature Java Spring web application as per the needs of actual users",
-				"Collaborated on an ongoing UI refresh and transitioned existing JSP pages to modern technologies such as React",
+				"Collaborated with senior developers to maintain MyInfoVault, a platform for academic personnel",
+				"Resolved defects and developed new features in a mature Java Spring web application as per the needs of actual users",
+				"Collaborated on an ongoing UI refresh and transitioned existing JSP pages to modern technologies such as Vue.js",
 			],
 			techStack: ["Java", "Spring", "React", "MariaDB", "Jira"],
 		},
@@ -60,7 +60,7 @@ export function MainContent() {
 			startDate: "June 2023",
 			endDate: "Sept 2023",
 			description: [
-				"Worked with a team of fellow interns to build & release a full-stack mobile application to gather crowdsourced data for an ongoing project to identify and tag horses in the wild with machine learning",
+				"Worked with a team to build and release a full-stack mobile application to gather crowdsourced data to identify and tag horses in the wild with machine learning",
 				"Designed and deployed backend systems for image processing, user management, and app functionality using standard technologies and platforms such as node.js, postgres, Microsoft Azure, Google Firebase, PostgresSQL, Docker, and Kubernetes.",
 				"Implemented machining learning models in to the backend to ensure image validity and quality whilst removing unwanted and dangerous content",
 			],
@@ -70,9 +70,7 @@ export function MainContent() {
 				"Azure",
 				"Firebase",
 				"Docker",
-				"Kubernetes",
 				"Machine Learning",
-				"Flutter",
 			],
 		},
 	];
@@ -87,7 +85,7 @@ export function MainContent() {
 				"Building Skewer, an open-source animation suite for distributed deep rendering, compositing, and render orchestration",
 				"Developed a custom C++ ray tracing renderer with deep sampling support for per-pixel depth and opacity data",
 				"Researched and implemented a deep image compositor for merging multi-layer render outputs efficiently",
-				"Designed cloud infrastructure for distributed render jobs across local and remote workers",
+				"Designed cloud infrastructure for distributed render jobs across Google Cloud Platform",
 				"Created a React and Three.js scene previewer for editing scenes and dispatching render jobs",
 			],
 			techStack: [
@@ -106,8 +104,8 @@ export function MainContent() {
 			startDate: "Sep 2024",
 			endDate: "May 2025",
 			description: [
-				"Built Volare, a web-based AI interview coach that helps college students practice with role-specific mock interviews",
-				"Developed a TypeScript backend and Next.js frontend for generating interview sessions from job listings and user profiles",
+				"Launched Volare, a web-based AI interview coach that helps college students practice with role-specific mock interviews",
+				"Developed a TypeScript backend and Next.js frontend for generating personalized interview sessions from job listings and user profiles and resumes",
 				"Integrated ElevenLabs voice synthesis to support real-time conversational interview practice",
 				"Added computer vision feedback for facial expression and emotion cues to make post-interview coaching more personalized",
 			],
