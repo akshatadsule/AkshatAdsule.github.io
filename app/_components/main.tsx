@@ -122,7 +122,7 @@ export function MainContent() {
 		{
 			name: "Bike Black Box",
 			link: "https://b3.aksads.tech",
-			startDate: "Jan 2025",
+			startDate: "April 2025",
 			endDate: "June 2025",
 			description: [
 				"Built B3, a smart bike monitoring system for automatic ride tracking, crash detection, and live location sharing",
