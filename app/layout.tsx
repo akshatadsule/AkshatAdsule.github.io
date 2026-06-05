@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import { Backdrop } from "./_components/backdrop";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "./seo";
 
 const akshatSans = localFont({
 	src: "./fonts/AkshatSans.ttf",
@@ -23,8 +24,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-	title: "Akshat Adsule",
-	description: "Software Enginner and amatuer photographer",
+	metadataBase: new URL(SITE_URL),
+	title: {
+		default: SITE_NAME,
+		template: `%s | ${SITE_NAME}`,
+	},
+	description: SITE_DESCRIPTION,
 	keywords: [
 		"Akshat Adsule",
 		"UC Davis",
@@ -32,13 +37,41 @@ export const metadata: Metadata = {
 		"Software Engineering",
 		"Developer",
 		"Photographer",
-		"Photographery",
+		"Portfolio",
+		"Next.js",
+		"React",
+		"Cloud Infrastructure",
+		"Distributed Rendering",
 	],
 	authors: [{ name: "Akshat Adsule" }],
+	creator: "Akshat Adsule",
+	publisher: "Akshat Adsule",
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
-		title: "Akshat Adsule",
-		description: "Software Enginner and amatuer photographer",
+		title: SITE_NAME,
+		description: SITE_DESCRIPTION,
+		url: "/",
+		siteName: SITE_NAME,
+		locale: "en_US",
 		type: "website",
+	},
+	twitter: {
+		card: "summary",
+		title: SITE_NAME,
+		description: SITE_DESCRIPTION,
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-snippet": -1,
+			"max-image-preview": "large",
+			"max-video-preview": -1,
+		},
 	},
 };
 
