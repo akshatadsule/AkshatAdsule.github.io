@@ -90,9 +90,7 @@ export function Header() {
 			<div>
 				<h1>Akshat Adsule</h1>
 				<h2>Software engineer & amateur photographer</h2>
-				<p>
-					Incoming associate software engineer at Veeva
-				</p>
+				<p>Incoming associate software engineer at Veeva</p>
 				<ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
 					<li className="mr-5 shrink-0">
 						<Github />
