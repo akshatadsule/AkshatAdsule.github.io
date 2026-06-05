@@ -24,7 +24,7 @@
 		"tailwindcss": "^3.4.17",
 		"typescript": "^5.9.2"
 	},
-	"packageManager": "pnpm@9.10.0+sha256.355a8ab8dbb6ad41befbef39bc4fd6b5df85e12761d2724bd01f13e878de4b13",
+	"packageManager": "pnpm@11.5.1+sha512.93f7b57422ea7068257235b4c16eb60762eb68e1dc23723199cc739043ea9be2c4143274a399d8c6defa2b1176226d9ca1c4b63482d6200c1a8fbaa78c1d1485",
 	"pnpm": {
 		"overrides": {
 			"@types/react": "19.2.7",
