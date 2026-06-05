@@ -161,7 +161,7 @@ export function MainContent() {
 				</ol>
 			</section>
 
-			<hr />
+			<hr className="mx-auto mb-20 mt-2 w-[calc(100%-2rem)] border-0 border-t border-slate-700/60 sm:w-[calc(100%-3rem)] lg:mb-16" />
 
 			<section id="projects">
 				<ol className="group/list">
