@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Aperture } from "./icons/aperture";
 import { Github } from "./icons/github";
 import { LinkedIn } from "./icons/linkedin";
@@ -14,23 +14,76 @@ const navItems = [
 
 export function Header() {
 	const [activeSection, setActiveSection] = useState("about");
+	const frameRef = useRef<number | null>(null);
 
 	useEffect(() => {
-		const sections = document.querySelectorAll("section[id]");
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						setActiveSection(entry.target.id);
+		const sections = navItems
+			.map((item) => document.getElementById(item.id))
+			.filter((section): section is HTMLElement => section !== null);
+
+		if (sections.length === 0) {
+			return;
+		}
+
+		const updateActiveSection = () => {
+			frameRef.current = null;
+
+			const scrollY = window.scrollY;
+			const viewportHeight = window.innerHeight;
+			const documentHeight = document.documentElement.scrollHeight;
+			const readingLine = scrollY + Math.min(viewportHeight * 0.35, 260);
+			const isAtPageEnd =
+				scrollY + viewportHeight >=
+				documentHeight - Math.max(24, viewportHeight * 0.05);
+
+			let nextActiveSection = sections[0].id;
+
+			if (isAtPageEnd) {
+				nextActiveSection = sections[sections.length - 1].id;
+			} else {
+				for (const section of sections) {
+					const sectionTop = section.getBoundingClientRect().top + scrollY;
+
+					if (sectionTop <= readingLine) {
+						nextActiveSection = section.id;
+					} else {
+						break;
 					}
-				});
-			},
-			{ rootMargin: "-20% 0px -60% 0px" },
-		);
+				}
+			}
 
-		sections.forEach((section) => observer.observe(section));
+			setActiveSection((currentSection) =>
+				currentSection === nextActiveSection
+					? currentSection
+					: nextActiveSection,
+			);
+		};
 
-		return () => observer.disconnect();
+		const queueActiveSectionUpdate = () => {
+			if (frameRef.current !== null) {
+				return;
+			}
+
+			frameRef.current = window.requestAnimationFrame(updateActiveSection);
+		};
+
+		updateActiveSection();
+
+		window.addEventListener("scroll", queueActiveSectionUpdate, {
+			passive: true,
+		});
+		window.addEventListener("resize", queueActiveSectionUpdate);
+		window.addEventListener("hashchange", queueActiveSectionUpdate);
+
+		return () => {
+			if (frameRef.current !== null) {
+				window.cancelAnimationFrame(frameRef.current);
+			}
+
+			window.removeEventListener("scroll", queueActiveSectionUpdate);
+			window.removeEventListener("resize", queueActiveSectionUpdate);
+			window.removeEventListener("hashchange", queueActiveSectionUpdate);
+		};
 	}, []);
 
 	return (
@@ -63,6 +116,10 @@ export function Header() {
 								<a
 									className="group flex items-center py-3"
 									href={`#${item.id}`}
+									onClick={() => setActiveSection(item.id)}
+									aria-current={
+										activeSection === item.id ? "location" : undefined
+									}
 								>
 									<span
 										className={`nav-indicator mr-4 h-px bg-slate-600 transition-all motion-reduce:transition-none ${
