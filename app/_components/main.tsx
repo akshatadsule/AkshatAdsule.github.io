@@ -199,8 +199,8 @@ export function MainContent() {
 			</section>
 
 			<div className="mt-12 text-center">
-				<Link href="/resume.pdf" label="View my full Resume">
-					View my full Resume <Arrow />
+				<Link href="/resume.pdf" label="View my full resume">
+					View my full résumé<Arrow />
 				</Link>
 			</div>
 		</main>
