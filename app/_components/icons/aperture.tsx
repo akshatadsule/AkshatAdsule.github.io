@@ -2,7 +2,7 @@ export function Aperture() {
 	return (
 		<a
 			className="block hover:text-slate-200"
-			href="https://photos.aksads.tech"
+			href="https://photos.adsule.com"
 			target="_blank"
 			rel="noreferrer noopener"
 			aria-label="My Photo Gallery (opens in a new tab)"

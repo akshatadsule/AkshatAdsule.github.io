@@ -1,4 +1,4 @@
-export const SITE_URL = "https://aksads.tech";
+export const SITE_URL = "https://adsule.com";
 
 export const SITE_NAME = "Akshat Adsule";
 
@@ -8,7 +8,7 @@ export const SITE_DESCRIPTION =
 export const PROFILE_LINKS = [
 	"https://www.linkedin.com/in/AkshatAdsule/",
 	"https://github.com/AkshatAdsule",
-	"https://photos.aksads.tech",
+	"https://photos.adsule.com",
 ];
 
 export const PERSON_JSON_LD = {

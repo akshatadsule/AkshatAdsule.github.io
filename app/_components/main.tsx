@@ -100,7 +100,7 @@ export function MainContent() {
 		},
 		{
 			name: "Volare",
-			link: "https://volare.aksads.tech",
+			link: "https://volare.adsule.com",
 			startDate: "Sep 2024",
 			endDate: "May 2025",
 			description: [
@@ -119,7 +119,7 @@ export function MainContent() {
 		},
 		{
 			name: "Bike Black Box",
-			link: "https://b3.aksads.tech",
+			link: "https://b3.adsule.com",
 			startDate: "April 2025",
 			endDate: "June 2025",
 			description: [
@@ -172,7 +172,7 @@ export function MainContent() {
 				</Link>
 				. Outside of my responsibilities, I also enjoy photography. You can find
 				some of my favorite shots over on my{" "}
-				<Link href="https://photos.aksads.tech/" label="Photo Gallery">
+				<Link href="https://photos.adsule.com/" label="Photo Gallery">
 					photo gallery
 				</Link>
 				.
