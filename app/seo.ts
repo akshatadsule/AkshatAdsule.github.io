@@ -5,6 +5,8 @@ export const SITE_NAME = "Akshat Adsule";
 export const SITE_DESCRIPTION =
 	"Akshat Adsule is a software engineer, UC Davis computer science and engineering student, and photographer building web, cloud, and rendering systems.";
 
+export const SITE_BACKGROUND_COLOR = "#0f172a";
+
 export const PROFILE_LINKS = [
 	"https://www.linkedin.com/in/AkshatAdsule/",
 	"https://github.com/AkshatAdsule",

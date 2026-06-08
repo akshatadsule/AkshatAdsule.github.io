@@ -1,11 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { Space_Grotesk } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
 import { Backdrop } from "./_components/backdrop";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "./seo";
+import {
+	SITE_BACKGROUND_COLOR,
+	SITE_DESCRIPTION,
+	SITE_NAME,
+	SITE_URL,
+} from "./seo";
 
 const akshatSans = localFont({
 	src: "./fonts/AkshatSans.ttf",
@@ -73,6 +78,11 @@ export const metadata: Metadata = {
 			"max-video-preview": -1,
 		},
 	},
+};
+
+export const viewport: Viewport = {
+	themeColor: SITE_BACKGROUND_COLOR,
+	colorScheme: "dark",
 };
 
 export default function RootLayout({

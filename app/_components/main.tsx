@@ -143,11 +143,11 @@ export function MainContent() {
 		<main className="pt-24 lg:w-3/4 lg:py-24">
 			<section id="about">
 				<h2 className="sr-only">About Akshat Adsule</h2>
-				I'm a software engineer and UC Davis computer science and
-				engineering graduate. Since I was a kid, I've always been fascinated by
-				technology. I started programming in middle school and have been hooked
-				ever since. I've worked on a variety of projects with different
-				technologies and teams. In the past, I've built robots with my{" "}
+				I'm a software engineer and UC Davis computer science and engineering
+				graduate. Since I was a kid, I've always been fascinated by technology.
+				I started programming in middle school and have been hooked ever since.
+				I've worked on a variety of projects with different technologies and
+				teams. In the past, I've built robots with my{" "}
 				<Link href="https://homesteadrobotics.com/" label="robotics team">
 					Robotics Team
 				</Link>
@@ -200,7 +200,8 @@ export function MainContent() {
 
 			<div className="mt-12 text-center">
 				<Link href="/resume.pdf" label="View my full resume">
-					View my full résumé<Arrow />
+					View my full résumé
+					<Arrow />
 				</Link>
 			</div>
 		</main>

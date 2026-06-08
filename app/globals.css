@@ -25,7 +25,7 @@
 }
 
 :root {
-	--background: #ffffff;
+	--background: #0f172a;
 	--foreground: #171717;
 
 	--gradiant-start: transparent(80%);
@@ -34,15 +34,15 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background: #0a0a0a;
+		--background: #0f172a;
 		--foreground: #ededed;
 	}
 }
 
 body {
 	color: var(--foreground);
-	background: var(--background);
-	background: radial-gradient(
+	background-color: var(--background);
+	background-image: radial-gradient(
 		300px at 200px 100px,
 		var(--gradiant-end) 0%,
 		var(--gradiant-start) 100%
