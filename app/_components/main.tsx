@@ -140,7 +140,7 @@ export function MainContent() {
 	];
 
 	return (
-		<main className="pt-24 lg:w-3/4 lg:py-24">
+		<main className="pt-8 lg:w-3/4 lg:py-24">
 			<section id="about">
 				<h2 className="sr-only">About Akshat Adsule</h2>
 				I'm a software engineer and UC Davis computer science and engineering
