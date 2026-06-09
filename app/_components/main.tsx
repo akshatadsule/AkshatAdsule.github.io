@@ -149,7 +149,7 @@ export function MainContent() {
 				I've worked on a variety of projects with different technologies and
 				teams. In the past, I've built robots with my{" "}
 				<Link href="https://homesteadrobotics.com/" label="robotics team">
-					Robotics Team
+					robotics team
 				</Link>
 				, interned at a{" "}
 				<Link
@@ -160,13 +160,13 @@ export function MainContent() {
 				</Link>{" "}
 				tracking horses in the wild, and contributed to{" "}
 				<Link
-					href="https://www.veeva.com/products/veeva-edc/"
+					href="https://www.veeva.com/products/clinical-data-management/"
 					label="Veeva Systems"
 				>
-					Veeva’s Electronic Data Capture (EDC) platform
+					Veeva’s clinical data management platform
 				</Link>{" "}
-				improving clinical data collection and validation processes. I'm
-				currently working at my school's{" "}
+				improving clinical data collection and validation processes. I also
+				worked at my school's{" "}
 				<Link href="https://iet.ucdavis.edu/" label="university">
 					IT department
 				</Link>
