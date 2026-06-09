@@ -144,34 +144,40 @@ export function MainContent() {
 			<section id="about">
 				<h2 className="sr-only">About Akshat Adsule</h2>
 				I'm a software engineer and UC Davis computer science and engineering
-				graduate. Since I was a kid, I've always been fascinated by technology.
-				I started programming in middle school and have been hooked ever since.
-				I've worked on a variety of projects with different technologies and
-				teams. In the past, I've built robots with my{" "}
+				graduate, joining{" "}
+				<Link
+					href="https://www.veeva.com/products/clinical-data-management/"
+					label="Veeva Systems"
+				>
+					Veeva
+				</Link>{" "}
+				to build clinical data management software. My work spans
+				production platforms, cloud systems, and hands-on engineering projects,
+				including{" "}
+				<Link
+					href="https://github.com/skewer-project/skewer"
+					label="Distributed Deep Rendering and Compositing"
+				>
+					distributed deep rendering and compositing
+				</Link>
+				, where I'm building open-source tools for rendering, and orchestrating
+				animation workloads. Before that, I built robots with my{" "}
 				<Link href="https://homesteadrobotics.com/" label="robotics team">
 					robotics team
 				</Link>
-				, interned at a{" "}
+				, launched an app at a{" "}
 				<Link
 					href="https://home.americanwildhorse.org/"
 					label="American Wild Horse Campaign"
 				>
 					large non-profit organization
 				</Link>{" "}
-				tracking horses in the wild, and contributed to{" "}
-				<Link
-					href="https://www.veeva.com/products/clinical-data-management/"
-					label="Veeva Systems"
-				>
-					Veeva’s clinical data management platform
-				</Link>{" "}
-				improving clinical data collection and validation processes. I also
-				worked at my school's{" "}
+				for tracking horses in the wild, and worked at my school's{" "}
 				<Link href="https://iet.ucdavis.edu/" label="university">
 					IT department
 				</Link>
-				. Outside of my responsibilities, I also enjoy photography. You can find
-				some of my favorite shots over on my{" "}
+				. Outside of software, I spend a lot of time with photography; some of
+				my favorite shots live in my{" "}
 				<Link href="https://photos.adsule.com/" label="Photo Gallery">
 					photo gallery
 				</Link>
