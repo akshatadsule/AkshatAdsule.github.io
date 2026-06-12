@@ -151,9 +151,8 @@ export function MainContent() {
 				>
 					Veeva
 				</Link>{" "}
-				to build clinical data management software. My work spans
-				production platforms, cloud systems, and hands-on engineering projects,
-				including{" "}
+				to build clinical data management software. My work spans production
+				platforms, cloud systems, and hands-on engineering projects, including{" "}
 				<Link
 					href="https://github.com/skewer-project/skewer"
 					label="Distributed Deep Rendering and Compositing"
