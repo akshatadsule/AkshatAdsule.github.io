@@ -1,10 +1,11 @@
 {
 	"name": "akshatadsule.github.io",
 	"version": "0.1.0",
+	"type": "module",
 	"private": true,
 	"scripts": {
-		"dev": "next dev --turbo",
-		"build": "next build",
+		"dev": "NODE_OPTIONS=--disable-warning=DEP0205 next dev --turbo",
+		"build": "NODE_OPTIONS=--disable-warning=DEP0205 next build",
 		"start": "next start",
 		"lint": "biome check"
 	},

@@ -1,5 +1,11 @@
 @import "tailwindcss";
-@config "../tailwind.config.ts";
+
+@theme {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-akshatSans: var(--font-akshat-sans);
+	--font-spaceGrotesk: var(--font-space-grotesk);
+}
 
 @layer base {
 	h1 {
