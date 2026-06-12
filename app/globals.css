@@ -1,26 +1,58 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.ts";
 
 @layer base {
 	h1 {
-		@apply font-akshatSans text-5xl tracking-tight text-slate-200 sm:text-7xl;
+		color: #e2e8f0;
+		font-family: var(--font-akshat-sans);
+		font-size: 3rem;
+		letter-spacing: -0.025em;
+		line-height: 1;
 	}
 
 	h2 {
-		@apply font-spaceGrotesk mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl;
+		color: #e2e8f0;
+		font-family: var(--font-space-grotesk);
+		font-size: 1.125rem;
+		font-weight: 500;
+		letter-spacing: -0.025em;
+		line-height: 1.75rem;
+		margin-top: 0.75rem;
 	}
 
 	h3 {
-		@apply font-spaceGrotesk font-medium leading-snug text-slate-200;
+		color: #e2e8f0;
+		font-family: var(--font-space-grotesk);
+		font-weight: 500;
+		line-height: 1.375;
 	}
 
 	p {
-		@apply mt-4 max-w-xs leading-normal;
+		line-height: 1.5;
+		margin-top: 1rem;
+		max-width: 20rem;
 	}
 
 	section {
-		@apply mb-16 scroll-mt-16 lg:scroll-mt-24;
+		margin-bottom: 4rem;
+		scroll-margin-top: 4rem;
+	}
+
+	@media (width >= 40rem) {
+		h1 {
+			font-size: 4.5rem;
+		}
+
+		h2 {
+			font-size: 1.25rem;
+			line-height: 1.75rem;
+		}
+	}
+
+	@media (width >= 64rem) {
+		section {
+			scroll-margin-top: 6rem;
+		}
 	}
 }
 
