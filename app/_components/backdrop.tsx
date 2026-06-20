@@ -4,32 +4,59 @@ import React from "react";
 
 type Position = [number, number];
 
+const WIDE_SCREEN_QUERY = "(min-width: 1024px)";
+
 export function Backdrop() {
+	const [isWideScreen, setIsWideScreen] = React.useState(false);
 	const [position, setPosition] = React.useState<Position>([0, 0]);
 	const lastMousePos = React.useRef<Position>([0, 0]);
 
-	const updatePosition = () => {
-		// Use last known mouse position relative to viewport, no scroll offset needed for fixed element
-		setPosition(lastMousePos.current);
-	};
+	React.useEffect(() => {
+		const wideScreenMedia = window.matchMedia(WIDE_SCREEN_QUERY);
 
-	const onMouseMove = (event: MouseEvent) => {
-		lastMousePos.current = [event.clientX, event.clientY];
-		updatePosition();
-	};
+		const updateWideScreen = () => {
+			setIsWideScreen(wideScreenMedia.matches);
+		};
 
-	const onScroll = () => {
-		updatePosition();
-	};
+		updateWideScreen();
+		wideScreenMedia.addEventListener("change", updateWideScreen);
+
+		return () => {
+			wideScreenMedia.removeEventListener("change", updateWideScreen);
+		};
+	}, []);
 
 	React.useEffect(() => {
+		if (!isWideScreen) {
+			return;
+		}
+
+		const updatePosition = () => {
+			// Use last known mouse position relative to viewport, no scroll offset needed for fixed element
+			setPosition(lastMousePos.current);
+		};
+
+		const onMouseMove = (event: MouseEvent) => {
+			lastMousePos.current = [event.clientX, event.clientY];
+			updatePosition();
+		};
+
+		const onScroll = () => {
+			updatePosition();
+		};
+
 		document.addEventListener("mousemove", onMouseMove);
 		window.addEventListener("scroll", onScroll);
+
 		return () => {
 			document.removeEventListener("mousemove", onMouseMove);
 			window.removeEventListener("scroll", onScroll);
 		};
-	}, []);
+	}, [isWideScreen]);
+
+	if (!isWideScreen) {
+		return null;
+	}
 
 	return (
 		<div
