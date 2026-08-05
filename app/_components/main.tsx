@@ -14,7 +14,7 @@ export function MainContent() {
 			company: "Veeva Systems",
 			companyLink: "https://www.veeva.com/",
 			startDate: "August 2026",
-			endDate: "?",
+			endDate: "present",
 			description: [],
 			techStack: [],
 		},
@@ -44,7 +44,7 @@ export function MainContent() {
 			company: "UC Davis IET",
 			companyLink: "https://iet.ucdavis.edu/",
 			startDate: "Oct 2023",
-			endDate: "Present",
+			endDate: "Jun 2026",
 			description: [
 				"Collaborated with senior developers to maintain MyInfoVault, a platform for academic personnel",
 				"Resolved defects and developed new features in a mature Java Spring web application as per the needs of actual users",
