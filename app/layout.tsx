@@ -9,6 +9,7 @@ import {
 	SITE_BACKGROUND_COLOR,
 	SITE_DESCRIPTION,
 	SITE_NAME,
+	SITE_TITLE,
 	SITE_URL,
 } from "./seo";
 
@@ -31,7 +32,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE_URL),
 	title: {
-		default: SITE_NAME,
+		default: SITE_TITLE,
 		template: `%s | ${SITE_NAME}`,
 	},
 	description: SITE_DESCRIPTION,
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
 		canonical: "/",
 	},
 	openGraph: {
-		title: SITE_NAME,
+		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 		url: "/",
 		siteName: SITE_NAME,
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary",
-		title: SITE_NAME,
+		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 	},
 	robots: {

@@ -10,12 +10,14 @@ const navItems = [
 	{ id: "experience", label: "Experience" },
 	{ id: "projects", label: "Projects" },
 ];
+const DESKTOP_QUERY = "(min-width: 1024px)";
 
 export function Header() {
 	const [activeSection, setActiveSection] = useState("about");
 	const frameRef = useRef<number | null>(null);
 
 	useEffect(() => {
+		const desktop = window.matchMedia(DESKTOP_QUERY);
 		const sections = navItems
 			.map((item) => document.getElementById(item.id))
 			.filter((section): section is HTMLElement => section !== null);
@@ -66,15 +68,30 @@ export function Header() {
 			frameRef.current = window.requestAnimationFrame(updateActiveSection);
 		};
 
-		updateActiveSection();
+		const updateTracking = () => {
+			if (desktop.matches) {
+				updateActiveSection();
+				window.addEventListener("scroll", queueActiveSectionUpdate, {
+					passive: true,
+				});
+				window.addEventListener("resize", queueActiveSectionUpdate);
+				window.addEventListener("hashchange", queueActiveSectionUpdate);
+			} else {
+				window.removeEventListener("scroll", queueActiveSectionUpdate);
+				window.removeEventListener("resize", queueActiveSectionUpdate);
+				window.removeEventListener("hashchange", queueActiveSectionUpdate);
+				if (frameRef.current !== null) {
+					window.cancelAnimationFrame(frameRef.current);
+					frameRef.current = null;
+				}
+			}
+		};
 
-		window.addEventListener("scroll", queueActiveSectionUpdate, {
-			passive: true,
-		});
-		window.addEventListener("resize", queueActiveSectionUpdate);
-		window.addEventListener("hashchange", queueActiveSectionUpdate);
+		updateTracking();
+		desktop.addEventListener("change", updateTracking);
 
 		return () => {
+			desktop.removeEventListener("change", updateTracking);
 			if (frameRef.current !== null) {
 				window.cancelAnimationFrame(frameRef.current);
 			}
@@ -125,7 +142,7 @@ export function Header() {
 										className={`nav-text text-xs font-bold uppercase tracking-widest ${
 											activeSection === item.id
 												? "text-slate-200"
-												: "text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200"
+												: "text-slate-400 group-hover:text-slate-200 group-focus-visible:text-slate-200"
 										}`}
 									>
 										{item.label}
