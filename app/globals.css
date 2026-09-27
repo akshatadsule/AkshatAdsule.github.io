@@ -73,11 +73,6 @@
 body {
 	color: var(--foreground);
 	background-color: var(--background);
-	background-image: radial-gradient(
-		300px at 200px 100px,
-		var(--gradiant-end) 0%,
-		var(--gradiant-start) 100%
-	);
 }
 
 .cursor-glow {
