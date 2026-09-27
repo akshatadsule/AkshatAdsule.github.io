@@ -1,71 +1,52 @@
 "use client";
 
-import React from "react";
+import { useEffect, useRef } from "react";
 
-type Position = [number, number];
-
-const WIDE_SCREEN_QUERY = "(min-width: 1024px)";
+const TRACKING_QUERY =
+	"(min-width: 1024px) and (pointer: fine) and (prefers-reduced-motion: no-preference)";
 
 export function Backdrop() {
-	const [isWideScreen, setIsWideScreen] = React.useState(false);
-	const [position, setPosition] = React.useState<Position>([0, 0]);
-	const lastMousePos = React.useRef<Position>([0, 0]);
+	const glowRef = useRef<HTMLDivElement>(null);
 
-	React.useEffect(() => {
-		const wideScreenMedia = window.matchMedia(WIDE_SCREEN_QUERY);
+	useEffect(() => {
+		const media = window.matchMedia(TRACKING_QUERY);
+		let frame: number | null = null;
+		let pointerX = 0;
+		let pointerY = 0;
 
-		const updateWideScreen = () => {
-			setIsWideScreen(wideScreenMedia.matches);
+		const moveGlow = () => {
+			frame = null;
+			if (glowRef.current) {
+				glowRef.current.style.transform = `translate3d(${pointerX}px, ${pointerY}px, 0)`;
+			}
 		};
 
-		updateWideScreen();
-		wideScreenMedia.addEventListener("change", updateWideScreen);
+		const onPointerMove = (event: PointerEvent) => {
+			pointerX = event.clientX;
+			pointerY = event.clientY;
+			if (frame === null) frame = window.requestAnimationFrame(moveGlow);
+		};
 
+		const updateTracking = () => {
+			if (media.matches) {
+				window.addEventListener("pointermove", onPointerMove, {
+					passive: true,
+				});
+			} else {
+				window.removeEventListener("pointermove", onPointerMove);
+				if (frame !== null) window.cancelAnimationFrame(frame);
+				frame = null;
+			}
+		};
+
+		updateTracking();
+		media.addEventListener("change", updateTracking);
 		return () => {
-			wideScreenMedia.removeEventListener("change", updateWideScreen);
+			media.removeEventListener("change", updateTracking);
+			window.removeEventListener("pointermove", onPointerMove);
+			if (frame !== null) window.cancelAnimationFrame(frame);
 		};
 	}, []);
 
-	React.useEffect(() => {
-		if (!isWideScreen) {
-			return;
-		}
-
-		const updatePosition = () => {
-			// Use last known mouse position relative to viewport, no scroll offset needed for fixed element
-			setPosition(lastMousePos.current);
-		};
-
-		const onMouseMove = (event: MouseEvent) => {
-			lastMousePos.current = [event.clientX, event.clientY];
-			updatePosition();
-		};
-
-		const onScroll = () => {
-			updatePosition();
-		};
-
-		document.addEventListener("mousemove", onMouseMove);
-		window.addEventListener("scroll", onScroll);
-
-		return () => {
-			document.removeEventListener("mousemove", onMouseMove);
-			window.removeEventListener("scroll", onScroll);
-		};
-	}, [isWideScreen]);
-
-	if (!isWideScreen) {
-		return null;
-	}
-
-	return (
-		<div
-			className="pointer-events-none fixed inset-0 z-30 transition duration-1000"
-			style={{
-				background: `radial-gradient(600px at ${position[0]}px ${
-					position[1]
-				}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-			}}
-		></div>
-	);
+	return <div ref={glowRef} className="cursor-glow" aria-hidden="true" />;
 }
