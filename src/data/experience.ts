@@ -1,4 +1,21 @@
-import type { JobDetails, ProjectDetails } from "./_components/experience-card";
+export interface JobDetails {
+	role: string;
+	company: string;
+	companyLink: string;
+	startDate: string;
+	endDate: string;
+	description: string[];
+	techStack: string[];
+}
+
+export interface ProjectDetails {
+	name: string;
+	link: string;
+	startDate: string;
+	endDate: string;
+	description: string[];
+	techStack: string[];
+}
 
 export const jobs: JobDetails[] = [
 	{

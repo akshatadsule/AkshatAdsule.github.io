@@ -65,9 +65,6 @@
 :root {
 	--background: #0f172a;
 	--foreground: #90a1b9;
-
-	--gradiant-start: transparent;
-	--gradiant-end: rgba(29, 78, 216, 0.15);
 }
 
 body {

@@ -1,3 +1,3 @@
 import { copyFile } from "node:fs/promises";
 
-await copyFile("cloudflare/_headers", "out/_headers");
+await copyFile("cloudflare/_headers", "dist/_headers");
