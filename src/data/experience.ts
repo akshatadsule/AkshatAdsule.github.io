@@ -24,7 +24,7 @@ export const jobs: JobDetails[] = [
 		companyLink: "https://www.veeva.com/",
 		startDate: "August 2026",
 		endDate: "present",
-		description: [],
+		description: ["Building software for clinical data management."],
 		techStack: [],
 	},
 	{

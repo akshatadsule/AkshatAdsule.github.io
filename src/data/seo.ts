@@ -1,9 +1,10 @@
 export const SITE_URL = "https://adsule.com";
 
 export const SITE_NAME = "Akshat Adsule";
+export const SITE_TITLE = "Akshat Adsule — Software Engineer & Photographer";
 
 export const SITE_DESCRIPTION =
-	"Akshat Adsule is a software engineer, UC Davis computer science and engineering student, and photographer building web, cloud, and rendering systems.";
+	"Akshat Adsule is a software engineer at Veeva Systems, UC Davis computer science and engineering graduate, and photographer building web, cloud, and rendering systems.";
 
 export const SITE_KEYWORDS = [
 	"Akshat Adsule",

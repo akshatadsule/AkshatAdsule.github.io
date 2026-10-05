@@ -9,32 +9,26 @@ import TimelineCard from "./TimelineCard.astro";
 	<section id="about">
 		<h2 class="sr-only">About Akshat Adsule</h2>
 		I'm a software engineer and UC Davis computer science and engineering
-		graduate, joining{" "}
+		graduate, working at{" "}
 		<Link
-			href="https://www.veeva.com/products/clinical-data-management/"
-			label="Veeva Systems">Veeva</Link
+			href="https://www.veeva.com/products/clinical-data-management/">Veeva</Link
 		>{" "}
 		to build clinical data management software. My work spans production
 		platforms, cloud systems, and hands-on engineering projects, including{" "}
 		<Link
-			href="https://github.com/skewer-project/skewer"
-			label="Distributed Deep Rendering and Compositing"
-			>distributed deep rendering and compositing</Link
+			href="https://github.com/skewer-project/skewer">distributed deep rendering and compositing</Link
 		>, where I'm building open-source tools for rendering, and orchestrating
 		animation workloads. Before that, I built robots with my{" "}
-		<Link href="https://homesteadrobotics.com/" label="robotics team"
-			>robotics team</Link
+		<Link href="https://homesteadrobotics.com/">robotics team</Link
 		>, launched an app at a{" "}
 		<Link
-			href="https://home.americanwildhorse.org/"
-			label="American Wild Horse Campaign">large non-profit organization</Link
+			href="https://home.americanwildhorse.org/">large non-profit organization</Link
 		>{" "}
 		for tracking horses in the wild, and worked at my school's{" "}
-		<Link href="https://iet.ucdavis.edu/" label="university">IT department</Link
+		<Link href="https://iet.ucdavis.edu/">IT department</Link
 		>. Outside of software, I spend a lot of time with photography; some of
 		my favorite shots live in my{" "}
-		<Link href="https://photos.adsule.com/" label="Photo Gallery"
-			>photo gallery</Link
+		<Link href="https://photos.adsule.com/">photo gallery</Link
 		>.
 	</section>
 
@@ -47,7 +41,6 @@ import TimelineCard from "./TimelineCard.astro";
 						title={job.role}
 						subtitle={job.company}
 						link={job.companyLink}
-						linkLabel={job.company}
 						startDate={job.startDate}
 						endDate={job.endDate}
 						description={job.description}
@@ -68,7 +61,6 @@ import TimelineCard from "./TimelineCard.astro";
 					<TimelineCard
 						title={project.name}
 						link={project.link}
-						linkLabel={project.name}
 						startDate={project.startDate}
 						endDate={project.endDate}
 						description={project.description}
@@ -80,6 +72,6 @@ import TimelineCard from "./TimelineCard.astro";
 	</section>
 
 	<div class="mt-12 text-center">
-		<Link href="/resume.pdf" label="View my full resume">View my full résumé<Arrow /></Link>
+		<Link href="/resume.pdf">View my full résumé<Arrow /></Link>
 	</div>
 </main>

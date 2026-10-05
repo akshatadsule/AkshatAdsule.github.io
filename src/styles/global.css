@@ -72,6 +72,31 @@ body {
 	background-color: var(--background);
 }
 
+.cursor-glow {
+	display: none;
+	pointer-events: none;
+	position: fixed;
+	z-index: 30;
+	top: -600px;
+	left: -600px;
+	width: 1200px;
+	height: 1200px;
+	background: radial-gradient(
+		circle,
+		rgba(29, 78, 216, 0.15) 0,
+		transparent 50%
+	);
+	will-change: transform;
+}
+
+@media (width >= 64rem) and (pointer: fine) and (
+		prefers-reduced-motion: no-preference
+	) {
+	.cursor-glow {
+		display: block;
+	}
+}
+
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;

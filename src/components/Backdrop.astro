@@ -1,21 +1,40 @@
-<div
-	id="backdrop"
-	class="pointer-events-none fixed inset-0 z-30 hidden transition duration-1000 lg:block"
-	style="background: radial-gradient(600px at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%);"
->
-</div>
+<div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
 
 <script>
-	const WIDE_SCREEN_QUERY = "(min-width: 1024px)";
+	const TRACKING_QUERY =
+		"(min-width: 1024px) and (pointer: fine) and (prefers-reduced-motion: no-preference)";
 
-	const backdrop = document.getElementById("backdrop");
-	const wideScreenMedia = window.matchMedia(WIDE_SCREEN_QUERY);
+	const glow = document.getElementById("cursor-glow");
+	const media = window.matchMedia(TRACKING_QUERY);
+	let frame: number | null = null;
+	let pointerX = 0;
+	let pointerY = 0;
 
-	document.addEventListener("mousemove", (event) => {
-		if (!backdrop || !wideScreenMedia.matches) {
-			return;
+	const moveGlow = () => {
+		frame = null;
+		if (glow) {
+			glow.style.transform = `translate3d(${pointerX}px, ${pointerY}px, 0)`;
 		}
+	};
 
-		backdrop.style.background = `radial-gradient(600px at ${event.clientX}px ${event.clientY}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
-	});
+	const onPointerMove = (event: PointerEvent) => {
+		pointerX = event.clientX;
+		pointerY = event.clientY;
+		if (frame === null) frame = window.requestAnimationFrame(moveGlow);
+	};
+
+	const updateTracking = () => {
+		if (media.matches) {
+			window.addEventListener("pointermove", onPointerMove, {
+				passive: true,
+			});
+		} else {
+			window.removeEventListener("pointermove", onPointerMove);
+			if (frame !== null) window.cancelAnimationFrame(frame);
+			frame = null;
+		}
+	};
+
+	updateTracking();
+	media.addEventListener("change", updateTracking);
 </script>
