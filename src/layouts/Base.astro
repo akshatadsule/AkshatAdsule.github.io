@@ -1,0 +1,69 @@
+---
+import { Font } from "astro:assets";
+
+import Backdrop from "../components/Backdrop.astro";
+import {
+	SITE_BACKGROUND_COLOR,
+	SITE_DESCRIPTION,
+	SITE_KEYWORDS,
+	SITE_NAME,
+	SITE_URL,
+} from "../data/seo";
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	noindex?: boolean;
+}
+
+const { title, noindex = false } = Astro.props;
+const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
+---
+
+<!doctype html>
+<html lang="en" class="antialiased">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<Font cssVariable="--font-akshat-sans" preload />
+		<Font cssVariable="--font-space-grotesk" preload />
+		<meta name="theme-color" content={SITE_BACKGROUND_COLOR} />
+		<meta name="color-scheme" content="dark" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={SITE_DESCRIPTION} />
+		<meta name="author" content={SITE_NAME} />
+		<meta name="keywords" content={SITE_KEYWORDS.join(",")} />
+		<meta name="creator" content={SITE_NAME} />
+		<meta name="publisher" content={SITE_NAME} />
+		{
+			noindex ? (
+				<meta name="robots" content="noindex" />
+			) : (
+				<>
+					<meta name="robots" content="index, follow" />
+					<meta
+						name="googlebot"
+						content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+					/>
+					<link rel="canonical" href={SITE_URL} />
+					<meta property="og:title" content={SITE_NAME} />
+					<meta property="og:description" content={SITE_DESCRIPTION} />
+					<meta property="og:url" content={SITE_URL} />
+					<meta property="og:site_name" content={SITE_NAME} />
+					<meta property="og:locale" content="en_US" />
+					<meta property="og:type" content="website" />
+					<meta name="twitter:card" content="summary" />
+					<meta name="twitter:title" content={SITE_NAME} />
+					<meta name="twitter:description" content={SITE_DESCRIPTION} />
+				</>
+			)
+		}
+		<slot name="head" />
+	</head>
+	<body class="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900">
+		<div class="group/spotlight relative">
+			<Backdrop />
+			<slot />
+		</div>
+	</body>
+</html>

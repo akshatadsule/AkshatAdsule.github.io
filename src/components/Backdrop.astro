@@ -1,0 +1,21 @@
+<div
+	id="backdrop"
+	class="pointer-events-none fixed inset-0 z-30 hidden transition duration-1000 lg:block"
+	style="background: radial-gradient(600px at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%);"
+>
+</div>
+
+<script>
+	const WIDE_SCREEN_QUERY = "(min-width: 1024px)";
+
+	const backdrop = document.getElementById("backdrop");
+	const wideScreenMedia = window.matchMedia(WIDE_SCREEN_QUERY);
+
+	document.addEventListener("mousemove", (event) => {
+		if (!backdrop || !wideScreenMedia.matches) {
+			return;
+		}
+
+		backdrop.style.background = `radial-gradient(600px at ${event.clientX}px ${event.clientY}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
+	});
+</script>
