@@ -35,6 +35,13 @@ export const PERSON_JSON_LD = {
 	url: SITE_URL,
 	description: SITE_DESCRIPTION,
 	jobTitle: "Software Engineer",
+	worksFor: {
+		"@type": "Organization",
+		"name": "Veeva Systems",
+		"sameAs": [
+			"https://veeva.com"
+		]
+	},
 	sameAs: PROFILE_LINKS,
 	knowsAbout: [
 		"Software engineering",
